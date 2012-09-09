@@ -1,0 +1,50 @@
+!------------------------------------------------------------------------------
+! ~/.Xdefaults
+!
+! Author: adedomme 
+! Last modified: Wed Aug 15, 2012 05:16PM
+!
+!------------------------------------------------------------------------------
+
+urxvt*foreground: #f2f2f2
+urxvt*background: #101010
+urxvt*scrollBar:false
+urxvt*internalborder: 6
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+urxvt*color0:    #101010
+urxvt*color1:    #e89393
+urxvt.color2:    #9ece9e
+urxvt*color3:    #f0dfaf
+urxvt*color4:    #43617b
+urxvt*color5:    #ea96eb
+urxvt*color6:    #66969f
+urxvt*color7:    #f2f2f2
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+urxvt*color8:    #747474
+urxvt*color9:    #e89393
+urxvt.color10:    #9ece9e
+urxvt*color11:    #f0dfaf
+urxvt*color12:    #43617b 
+urxvt*color13:    #fba1fb
+urxvt*color14:    #869db3
+urxvt*color15:    #e2e2e2
+
+

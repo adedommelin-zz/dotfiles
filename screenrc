@@ -1,0 +1,28 @@
+
+vbell off
+defscrollback 10000
+autodetach on
+startup_message off
+bell_msg 'Activite : %n^G'
+bindkey "^[[1;2C" next
+bindkey "^[[1;2D" prev
+termcapinfo screen ti@:te@
+
+caption always "%{= kw}[ %H | %D %d %M | %c | %{=b}%l%{-} ] %= %{= kw}[ %-w%{= BW}%n %t%{-}%+w ]"
+bindkey -k F1 kill  # bind f11 to kill terminal
+bindkey -k F2 quit  # bind f12 to quit screen
+bind ^k
+bind ^\
+bind \\ quit
+bind K kill
+bind I login on
+bind O login off
+bind } history
+termcapinfo vt100 dl=5\E[M
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+screen -t irssi ssh -t fw0.tuxz.net screen -RD 
+screen -t mutt ssh -t fw0.tuxz.net mutt
+screen -t zsh 
+select 0
+

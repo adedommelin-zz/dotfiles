@@ -1,0 +1,201 @@
+set $mod Mod1
+
+#------------------------------------------------------------------------------
+# Autostart apps 
+#------------------------------------------------------------------------------
+exec firefox 
+exec urxvt
+
+
+#------------------------------------------------------------------------------
+# Workspaces
+#------------------------------------------------------------------------------
+# switch to workspace
+bindsym Mod1+1 workspace "1: terms"
+bindsym Mod1+2 workspace "2: web"
+bindsym Mod1+3 workspace "3: foo"
+bindsym Mod1+4 workspace "4: cssh"
+
+## Output certain workspaces
+workspace "1: terms" output LVDS1
+workspace "2: web" output LVDS1
+workspace "3: foo" output LVDS1
+workspace "4: cssh" output LVDS1
+
+## Assign workspaces to programs
+assign [class="^Iceweasel$"] 2: web
+assign [class="^URxvt$"] 1: terms
+assign [class="^rdesktop$"] 3: win
+
+
+# ClusterSSH #
+assign [class="Cssh"] 4: cssh 
+assign [class="cssh"] 4: cssh
+assign [class="DialogBox"] 4: cssh
+for_window [class="Cssh"] border normal
+for_window [class="Cssh"] floating enable
+for_window [class="cssh"] floating enable
+for_window [class="DialogBox"] border normal
+for_window [class="DialogBox"] floating enable
+
+
+# Keepass #
+for_window [class="Keepassx"] border normal
+for_window [class="Keepassx"] floating enable
+
+
+
+########################################################
+########		Aesthetics		########
+########################################################
+# Window border style: normal: border normal, with window title bar;
+# none: no border or window title bar; 1pixel: 1 pixel border.
+new_window 1pixel
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
+
+# font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Orientation for new workspaces
+# Can be set <horizontal|vertical|auto>
+default_orientation horizontal
+
+# Layout for new containers
+# Can be set <default|stacking|tabbed>
+workspace_layout default
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+########################################################
+########		Keybindings		########
+########################################################
+
+# start a terminal
+bindsym $mod+Return exec urxvt 
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+F2 exec dmenu_run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+J move left
+bindsym $mod+Shift+K move down
+bindsym $mod+Shift+L move up
+bindsym $mod+Shift+colon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  bindsym j resize shrink left 10 px or 10 ppt
+  bindsym Shift+J resize grow left 10 px or 10 ppt
+
+  bindsym k resize shrink down 10 px or 10 ppt
+  bindsym Shift+K resize grow down 10 px or 10 ppt
+
+  bindsym l resize shrink up 10 px or 10 ppt
+  bindsym Shift+L resize grow up 10 px or 10 ppt
+
+  bindsym semicolon resize shrink right 10 px or 10 ppt
+  bindsym Shift+colon resize grow right 10 px or 10 ppt
+
+          # same bindings, but for the arrow keys
+  bindsym Left resize shrink left 10 px or 10 ppt
+  bindsym Shift+Left resize grow left 10 px or 10 ppt
+
+  bindsym Down resize shrink down 10 px or 10 ppt
+  bindsym Shift+Down resize grow down 10 px or 10 ppt
+
+  bindsym Up resize shrink up 10 px or 10 ppt
+  bindsym Shift+Up resize grow up 10 px or 10 ppt
+
+  bindsym Right resize shrink right 10 px or 10 ppt
+  bindsym Shift+Right resize grow right 10 px or 10 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+########################################################
+########		i3bar			########
+########################################################
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    output            LVDS1
+    position          top
+    mode              dock
+    workspace_buttons yes
+    tray_output       DP1
+    
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    colors {
+        background #000000
+        statusline #FFFFFF
+
+        focused_workspace  #ffffff #0B4C5F
+        active_workspace   #ffffff #0B243B
+        inactive_workspace #888888 #585858
+        urgent_workspace   #ffffff #32CD32
+    }
+}
+
+
+
