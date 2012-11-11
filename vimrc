@@ -1,10 +1,13 @@
 "------------------------------------------------------------------------------
 " ~/.vimrc
 "
-" Author: adedommelin 
-" Last modified: Wed Aug 15, 2012 09:30AM
+" Author: adedommelin
+" Last modified: Sun Nov 11, 2012 08:56PM
 "
 "------------------------------------------------------------------------------
+let g:pathogen_disabled = ["syntastic"]
+call pathogen#infect()
+
 
 syntax on
 set background=light
@@ -16,7 +19,7 @@ set tabstop=2
 set shiftwidth=2
 set incsearch
 set path=.,/usr/include,/usr/local/include,,
-set showcmd 
+set showcmd
 set showmode
 set warn
 set ve=block
@@ -37,7 +40,7 @@ endfun
 autocmd BufWritePre * call LastModified()
 
 
-"" Insert header from template 
+"" Insert header from template
 function! InsertHeader()
   let template = $HOME . "/.vim/standard_header"
   let filename = expand("%:p")
@@ -56,18 +59,20 @@ vnoremap <F1> :call InsertHeader()<cr>
 nnoremap <F1> :call InsertHeader()<cr>
 
 
+"" Highlight redundant whitespaces at the end of the lines:
+highlight RedundantWhitespace ctermbg=red guibg=red
+match RedundantWhitespace /\s\+$\| \+\ze\t/
 
-"" Define custom statusline 
+
+
+
+"" Define custom statusline
 set laststatus=2
 set statusline=%1*[%n:%3*%f\ %2*%M%1*]%4*%a%1*\ %2*%r%h%1*[%LL]%=%4*%y%3*[%1*%c%V,%l%3*\|%1*%p%%%3*\|%1*%P%3*]
 
 
 "" Place cursor at the last known position when opening a file
 autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
-
-"" Highlight redundant whitespaces at the end of the lines:
-highlight RedundantWhitespace ctermbg=red guibg=red
-match RedundantWhitespace /\s\+$\| \+\ze\t/
 
 
 "" Firefox-like Tabs management
@@ -89,7 +94,7 @@ nnoremap <C-w> :tabclose<cr>
 nmap <C-l> :set invnumber<CR>
 
 
-"" Add some shortcuts for comments 
+"" Add some shortcuts for comments
 map ,# :s/^/#/<CR> <Esc>:nohlsearch <CR>
 map ,/ :s/^/\/\//<CR> <Esc>:nohlsearch <CR>
 map ," :s/^/\"/<CR> <Esc>:nohlsearch<CR>
