@@ -2,7 +2,7 @@
 # ~/.liquidpromptrc
 #
 # Author: adedommelin
-# Last modified: Sun Jan 20, 2013 04:31PM
+# Last modified: Sun Jan 20, 2013 06:22PM
 #
 #------------------------------------------------------------------------------
 LP_BATTERY_THRESHOLD=75
@@ -24,3 +24,5 @@ LP_ENABLE_HG=0
 LP_ENABLE_FOSSIL=0
 LP_ENABLE_TIME=0
 LP_ENABLE_TITLE=0
+
+LP_COLOR_SSH="${RED}"
