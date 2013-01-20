@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+# ~/.liquidpromptrc
+#
+# Author: adedommelin
+# Last modified: Sun Jan 20, 2013 04:31PM
+#
+#------------------------------------------------------------------------------
+LP_BATTERY_THRESHOLD=75
+LP_LOAD_THRESHOLD=60
+LP_PATH_LENGTH=35
+LP_PATH_KEEP=2
+LP_HOSTNAME_ALWAYS=0
+LP_USER_ALWAYS=1
+LP_ENABLE_PERM=1
+LP_ENABLE_SHORTEN_PATH=1
+LP_ENABLE_PROXY=0
+LP_ENABLE_JOBS=0
+LP_ENABLE_LOAD=0
+LP_ENABLE_BATT=0
+LP_ENABLE_VCS_ROOT=0
+LP_ENABLE_GIT=1
+LP_ENABLE_SVN=1
+LP_ENABLE_HG=0
+LP_ENABLE_FOSSIL=0
+LP_ENABLE_TIME=0
+LP_ENABLE_TITLE=0
