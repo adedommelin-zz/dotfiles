@@ -2,7 +2,7 @@
 # ~/.zshrc
 #
 # Author: adedommelin 
-# Last modified: Wed Aug 15, 2012 03:19PM
+# Last modified: Sun Jan 20, 2013 12:23PM
 #
 #------------------------------------------------------------------------------
 
@@ -36,33 +36,35 @@ WORDCHARS='*?_-[]~\!#$%^(){}<>|`@#$%^*()+:?'
 #------------------------------------------------------------------------------
 # Cosmetics 
 #------------------------------------------------------------------------------
-export date_color="white"
-export user_color="white"
-export host_color="white"
-export path_color="green"
+#export date_color="white"
+#export user_color="white"
+#export host_color="white"
+#export path_color="green"
+#
+#autoload -U colors
+#setopt prompt_subst
+#colors
+#
+#date_format="%H:%M"
+#date="%{$fg[$date_color]%}%D{$date_format}"
+#host="%{$fg[$user_color]%}%n%{$reset_color%}~%{$fg[$host_color]%}%m"
+#cpath="%{$fg[$path_color]%}\$PATHINFO%b"
+#end="%{$reset_color%}"
+#
+#precmd () { 
+#  if [ -d $PWD/.svn ] ; then
+#    PATHINFO="(svn):$PWD"
+#  else
+#    PATHINFO=$PWD
+#  fi
+#}
 
-autoload -U colors
-setopt prompt_subst
-colors
+#PS1="$date ($host$end) $cpath
+#$end%% "
 
-date_format="%H:%M"
-date="%{$fg[$date_color]%}%D{$date_format}"
-host="%{$fg[$user_color]%}%n%{$reset_color%}~%{$fg[$host_color]%}%m"
-cpath="%{$fg[$path_color]%}\$PATHINFO%b"
-end="%{$reset_color%}"
+#export PS1
 
-precmd () { 
-  if [ -d $PWD/.svn ] ; then
-    PATHINFO="(svn):$PWD"
-  else
-    PATHINFO=$PWD
-  fi
-}
-
-PS1="$date ($host$end) $cpath
-$end%% "
-
-export PS1
+source ~/.dotfiles/_liquidprompt/liquidprompt
 
 
 #------------------------------------------------------------------------------
