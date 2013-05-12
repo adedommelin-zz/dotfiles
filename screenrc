@@ -2,7 +2,7 @@
 # ~/.screenrc
 #
 # Author: adedommelin
-# Last modified: Sun Jan 20, 2013 04:29PM
+# Last modified: Sun Jan 27, 2013 07:38PM
 #
 #------------------------------------------------------------------------------
 
@@ -28,8 +28,8 @@ bind } history
 termcapinfo vt100 dl=5\E[M
 termcapinfo xterm*|linux*|rxvt*|Eterm* OP
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
-screen -t irssi ssh -t fw0.tuxz.net screen -RD 
-screen -t mutt ssh -t fw0.tuxz.net mutt
-screen -t zsh 
+screen -t irssi ssh -t fw0.tuxz.net screen -RD
+screen -t zsh
+screen -t zsh
 select 0
 

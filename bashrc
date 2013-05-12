@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 # Author: adedommelin
-# Last modified: Sun Jan 20, 2013 04:23PM
+# Last modified: Fri Feb 01, 2013 09:15AM
 #
 #------------------------------------------------------------------------------
 
@@ -49,6 +49,7 @@ alias minegetmyip='wget -q -O - http://www.tuxz.net/ip.php;echo -e ""'
 alias mineluksopen='sudo cryptsetup luksOpen /dev/sdb1 usbKey && sudo mount /dev/mapper/usbKey /mnt/usb'
 alias mineluksclose='cd / ; sudo umount /mnt/usb ; sudo cryptsetup luksClose /dev/mapper/usbKey'
 alias minefilemoiunpassword='tr -cd "[:graph:]" < /dev/urandom | head -c 40;echo ""'
+alias minedodo='echo "mem" | sudo tee /sys/power/state'
 
 # rhooooo my CLI
 alias ls='ls --color=always'

@@ -1,8 +1,8 @@
 #------------------------------------------------------------------------------
 # ~/.zshrc
 #
-# Author: adedommelin 
-# Last modified: Sun Jan 20, 2013 12:23PM
+# Author: adedommelin
+# Last modified: Fri Feb 01, 2013 09:08AM
 #
 #------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ setopt rmstarwait       # wait 10 seconds before querying for a rm which contain
 setopt auto_pushd       # Always push directory in stack
 setopt pushdminus       # Invert the behavior of cd -<tab> cd +<tab>
 export DIRSTACKSIZE=20  # Number of directory to keep in the stack
-set -C 			            # Don't erase file with >, use >| (overwrite) or >> (append) instead 
+set -C 			            # Don't erase file with >, use >| (overwrite) or >> (append) instead
 watch=(all)		          # Watch for new users
 
 HISTFILE=~/.zsh_history
@@ -147,6 +147,7 @@ alias minegetmyip='wget -q -O - http://www.tuxz.net/ip.php;echo -e ""'
 alias mineluksopen='sudo cryptsetup luksOpen /dev/sdb1 usbKey && sudo mount /dev/mapper/usbKey /mnt/usb'
 alias mineluksclose='cd / ; sudo umount /mnt/usb ; sudo cryptsetup luksClose /dev/mapper/usbKey'
 alias minefilemoiunpassword='tr -cd "[:graph:]" < /dev/urandom | head -c 40;echo ""'
+alias minedodo='echo "mem" | sudo tee /sys/power/state'
 
 # rhooooo my CLI
 alias ls='ls --color=always'

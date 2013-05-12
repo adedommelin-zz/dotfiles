@@ -1,9 +1,9 @@
 set $mod Mod1
 
 #------------------------------------------------------------------------------
-# Autostart apps 
+# Autostart apps
 #------------------------------------------------------------------------------
-exec firefox 
+exec chromium
 exec urxvt
 
 
@@ -23,13 +23,13 @@ workspace "3: foo" output LVDS1
 workspace "4: cssh" output LVDS1
 
 ## Assign workspaces to programs
-assign [class="^Iceweasel$"] 2: web
+assign [class="^Chromium$"] 2: web
+assign [class="^chromium$"] 2: web
 assign [class="^URxvt$"] 1: terms
-assign [class="^rdesktop$"] 3: win
 
 
 # ClusterSSH #
-assign [class="Cssh"] 4: cssh 
+assign [class="Cssh"] 4: cssh
 assign [class="cssh"] 4: cssh
 assign [class="DialogBox"] 4: cssh
 for_window [class="Cssh"] border normal
